@@ -291,7 +291,8 @@ function copyImageFromClipboard(e) {
         + '.' + blob.name.split('.').pop();
       var file = new Blob([blob], {type: blob.type});
       file.name = filename;
-      var inputEl = $('input:file.filedrop').first()
+      //var inputEl = $('input:file.filedrop').first()
+      var inputEl = $(this).closest("form").find('input:file.filedrop');
       handleFileDropEvent.target = e.target;
       addFile(inputEl, file, true);
     }
